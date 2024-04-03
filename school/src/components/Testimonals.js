@@ -18,7 +18,12 @@ function Testimonals() {
        slider.current.style.transform = `translateX(${forward}%);`
     }
     const slideBackward = ()=>{
-
+        const slideForward = ()=>{
+            if(forward < 0) {
+                 forward += 25;
+            } 
+            slider.current.style.transform = `translateX(${forward}%);`
+         }
     }
 
 
