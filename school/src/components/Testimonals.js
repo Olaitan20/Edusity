@@ -9,20 +9,20 @@ import user_4 from '../assets/user-4.png'
 
 function Testimonals() {
     const slider = useRef();
-    let forward = 0;
+    let tx = 0;
 
     const slideForward = ()=>{
-       if(forward < -50) {
-            forward -= 25;
+       if(tx > -50) {
+            tx -= 25;
        } 
-       slider.current.style.transform = `translateX(${forward}%);`
+       slider.current.style.transform = `translateX(${tx}%)`;
     }
     const slideBackward = ()=>{
         const slideForward = ()=>{
-            if(forward < 0) {
-                 forward += 25;
+            if(tx < 0) {
+                 tx += 25;
             } 
-            slider.current.style.transform = `translateX(${forward}%);`
+            slider.current.style.transform = `translateX(${tx}%)`;
          }
     }
 
@@ -30,8 +30,8 @@ function Testimonals() {
   return (
     <div className='testimonals'>
       <img src={next_icon} alt='' className='next-btn' onClick={slideForward}/>
-      <img src={back_icon} alt='' className='back-btn'/>
-      <div className='slider'onClick={slideBackward}>
+      <img src={back_icon} alt='' className='back-btn' onClick={slideBackward}/>
+      <div className='slider'>
         <ul ref={slider}>
             <li>
                 <div className='slide'>
